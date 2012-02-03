@@ -1,0 +1,29 @@
+<html>
+        <head>
+                <title> Appointment index</title>
+        </head>
+        <body>
+                <table align="center" border="1">
+
+                        <tr>
+                                <th> Patient_Name </th>
+                                <th> Doctor_Name </th>
+                                <th> Date_Of_Appointment </th>
+                        </tr>
+                         <% @appointments.each do |a|%>
+                        <tr>
+                                <td>
+                                        <%=a.patient.patient_name%>
+                                </td>
+                                <td>
+                                        <%=[a.doctor].map{|p| p.doctor_name}.join("")%>
+                                </td>
+                                <td>
+                                        <%=a.patient.appointment_date%>
+                                </td>
+                        </tr>
+                        <%end%>
+                </table>
+        </body>
+</html>
+

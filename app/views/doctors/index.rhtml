@@ -1,0 +1,26 @@
+<html>
+        <head>
+                <title> Doctor Index Page</title>
+        </head>
+        <body>
+                <table align="center" border="1">
+                        <tr>
+                                <th>
+                                        Doctor_Name
+                                </th>
+                                <th>
+                                        No_Of_Appointments
+                                </th>
+                        </tr>
+                        <% @doctors.each do |d|%>
+                                <tr>
+                                        <td> <%= d.doctor_name%> </td>
+                                        <td> <%= d.appointment_count%> </td>
+                                </tr>
+                        <%end%>
+                </table>
+                <%= link_to "New", "/doctors/new"%>
+
+        </body>
+</html>
+

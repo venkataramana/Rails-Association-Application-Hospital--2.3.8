@@ -1,0 +1,31 @@
+<html>
+        <head>
+                <title> Patients Index page </title>
+        </head>
+        <body>
+                <table align="center" border="1">
+                        <tr>
+                                <th> Patient_Name</th>
+                                <th> Gender</th>
+                                <th> Age</th>
+                                <th> Disease</th>
+                                 <th> Doctor_Name</th>
+                        </tr>
+                                <% @patients.each do |p|%>
+                        <tr>
+                                <td> <%= p.patient_name%> </td>
+                                <td> <%= p.gender%> </td>
+                                <td> <%= p.age%> </td>
+                                <td> <%= p.disease%> </td>
+                                <td><%#= p.doctors.collect(&:doctor_name).join("")%>
+                                        <%= p.doctors.map{|p| p.doctor_name}.join("")%>
+                                        <%#= p.doctors.map(&:doctor_name).join('')%>
+                                 </td>
+                         </tr>
+                                <%end%>
+
+                </table>
+                 <%= link_to "New", "/patients/new"%>
+        </body>
+</html>
+

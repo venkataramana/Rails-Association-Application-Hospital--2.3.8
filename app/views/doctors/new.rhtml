@@ -1,0 +1,16 @@
+<html>
+        <head>
+                <title> New doctor </title>
+        </head>
+        <body>
+                <table align="center">
+                        <% form_for @doctor, :url=>{:action=>"create"} do |f|%>
+                        <tr>
+                                <td>Doctor_Name: <%= f.text_field :doctor_name%></td>
+                        </tr>
+                </table>
+                        <%= f.submit "Enter"%>
+                        <%end%>
+        </body>
+</html>
+

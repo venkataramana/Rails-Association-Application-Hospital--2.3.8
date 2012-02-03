@@ -1,0 +1,42 @@
+<html>
+        <head>
+                <title> Patients New page </title>
+        </head>
+        <body>
+                <table align="center">
+                       <% form_for @patient, :url=>{:action => "create"} do |f|%>
+
+                       <tr>
+                                <td>
+                                          Select Doctor: <%= collection_select(:appointment, :doctor_id, @doctors, :id, :doctor_name, { :prompt=> "Select One" })%>
+                                </td>
+                       </tr>
+                       <tr>
+                                <td> Patient_Name: <%=f.text_field :patient_name %><td>
+                       </tr>
+                        <tr>
+                                <td> Gender: <%= radio_button("patient","gender", "Male")%> Male
+                             <%= radio_button("patient","gender", "Female")%>  Female</td>
+                        </tr>
+                        <tr>
+                                <td> Age: <%= select(:patient, :age, [['10', 10], ['20', 20], ['30', 30], ['40', 40],['50', 50], ['60', 60], ['70', 70] ]) %></td>
+                        </tr>
+                        <tr>
+                                <td> Disease: <%=f.text_field :disease %><td>
+                       </tr>
+                        <tr>
+                                <td> Date_Of_Appointment: <%=f.text_field :appointment_date %><td>
+                       </tr>
+
+               </table>
+               <table align="center">
+                        <tr>
+                                 <td><%= f.submit "Enter"%></td>
+                        </tr>
+                         <% end %>
+               </table>
+
+
+        </body>
+</html>
+
